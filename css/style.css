@@ -1,0 +1,183 @@
+body {
+  background-color: #deeeea;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 50px;
+}
+.rules {
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+#countries-btn,
+#desserts-btn,
+#animals-btn {
+  padding: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #39a6a3;
+  border-radius: 50%;
+  border: 2px solid #231e23;
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+.guesses {
+  margin: 20px 0 20px 0;
+}
+
+.hint-display {
+  width: 400px;
+  height: 25px;
+  padding: 3px;
+  color: #bf1363;
+}
+
+.empty-guess {
+  width: 500px;
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: #bf1363;
+  color: white;
+  line-height: 3;
+}
+
+#canvas {
+  background-color: #231e23;
+  width: 900;
+  height: 1000;
+  border: 3px solid #39a6a3;
+}
+
+.alphabet-container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: wrap;
+  width: 470px;
+  margin-top: 30px;
+}
+
+.letter {
+  padding: 10px;
+  width: 20px;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
+  background-color: #231e23;
+  color: white;
+  font-weight: bold;
+  border-radius: 20%;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.play-again-btn,
+.hint-btn {
+  padding: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #39a6a3;
+  border-radius: 50%;
+  border: 2px solid #231e;
+}
+
+.hint-btn {
+  color: white;
+  background-color: #bf1363;
+}
+
+.used-letter {
+  background-color: #716f81;
+  color: black;
+}
+
+@media only screen and (max-width: 780px) {
+  .btn-container {
+    width: 80%;
+  }
+  .category-container {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  body {
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+  .rules {
+    width: 100%;
+    font-size: 21px;
+    margin-bottom: 20px;
+  }
+  #countries-btn,
+  #desserts-btn,
+  #animals-btn {
+    padding: 7px;
+    font-size: 16px;
+    background-color: #ff4848;
+  }
+
+  .category-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .guesses {
+    margin: 20px 0 15px 0;
+  }
+
+  .hint-display {
+    width: 100%;
+  }
+
+  .empty-guess {
+    width: 96%;
+    word-wrap: break-word;
+    height: 70px;
+    margin-top: 8px;
+    line-height: 1.9;
+  }
+
+  .alphabet-container {
+    width: 99%;
+    margin-top: 18px;
+  }
+
+  .btn-container {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    width: 99%;
+  }
+
+  .play-again-btn,
+  .hint-btn {
+    padding: 8px;
+    font-size: 16px;
+  }
+}
