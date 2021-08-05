@@ -68,7 +68,7 @@ const wordCategory = {
       word: "alfajores",
       hint: "Cookies sandwiched together with chocolate and dulce de leche.",
     },
-    { word: "snickerdoodle", hint: "Butter cookie rooled in cinnamon sugar." },
+    { word: "snickerdoodle", hint: "Sugar cookie rolled in cinnamon sugar." },
     {
       word: "cannoli",
       hint: "fried tube-shaped shells filled with a sweet ricotta",
