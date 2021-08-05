@@ -7,9 +7,9 @@ The play again button can be used to stat a new game.
 
 ## Screenshots
 
-[Hangman](css/Hangman-1.png)
-[Hangman](css/Hangman-3.png)
-[Hangman](css/Hangman-5.png)
+![Hangman](css/Hangman-1.png)
+![Hangman](css/Hangman-3.png)
+![Hangman](css/Hangman-5.png)
 
 ## Tech Stack
 
