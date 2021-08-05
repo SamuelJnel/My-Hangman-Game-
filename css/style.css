@@ -28,13 +28,13 @@ h1 {
   background-color: #c3b9ea;
   border-radius: 50%;
   border: 2px solid #231e23;
+  margin-top: 10px;
 }
 
 .category-container {
   display: flex;
   justify-content: space-evenly;
   width: 50%;
-  margin-bottom: 15px;
 }
 
 .guesses {
@@ -45,7 +45,8 @@ h1 {
 .hint-display {
   width: 400px;
   height: 25px;
-  padding: 3px;
+  margin-top: 15px;
+
   font-family: "Times New Roman", Times, serif;
   color: #bf1363;
 }
@@ -95,6 +96,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   width: 60%;
+  margin-bottom: 10px;
 }
 
 .play-again-btn,

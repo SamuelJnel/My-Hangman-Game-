@@ -29,11 +29,11 @@ let animalBtn = document.querySelector("#animals-btn");
 
 let canvas = document.getElementById("canvas");
 
-countriesBtn.addEventListener("click", selectCountriesCategory, { once: true });
+countriesBtn.addEventListener("click", selectCountriesCategory);
 
-dessertBtn.addEventListener("click", selectDessertsCategory, { once: true });
+dessertBtn.addEventListener("click", selectDessertsCategory);
 
-animalBtn.addEventListener("click", selectAnimalsCategory, { once: true });
+animalBtn.addEventListener("click", selectAnimalsCategory);
 
 hintBtn.addEventListener("click", displayHintBtn);
 
@@ -110,6 +110,10 @@ function selectCountriesCategory(evt) {
   if (true) {
     indexNumber = Math.floor(Math.random() * wordCategory.countries.length);
     currentWord = wordCategory.countries[indexNumber].word.toUpperCase();
+    countriesBtn.style.backgroundColor = "#A239EA";
+    dessertBtn.style.backgroundColor = "#beaee2";
+    animalBtn.style.backgroundColor = "#beaee2";
+    displayHint.innerHTML = " ";
     showSpaces();
   }
 }
@@ -121,6 +125,10 @@ function selectDessertsCategory(evt) {
   if (true) {
     indexNumber = Math.floor(Math.random() * wordCategory.desserts.length);
     currentWord = wordCategory.desserts[indexNumber].word.toUpperCase();
+    dessertBtn.style.backgroundColor = "#A239EA";
+    countriesBtn.style.backgroundColor = "#beaee2";
+    animalBtn.style.backgroundColor = "#beaee2";
+    displayHint.innerHTML = " ";
     showSpaces();
   }
 }
@@ -131,6 +139,10 @@ function selectAnimalsCategory(evt) {
   if (true) {
     indexNumber = Math.floor(Math.random() * wordCategory.animals.length);
     currentWord = wordCategory.animals[indexNumber].word.toUpperCase();
+    animalBtn.style.backgroundColor = "#A239EA";
+    countriesBtn.style.backgroundColor = "#beaee2";
+    dessertBtn.style.backgroundColor = "#beaee2";
+    displayHint.innerHTML = " ";
     showSpaces();
   }
 }
