@@ -310,7 +310,6 @@ function resetGame() {
     el.addEventListener("click", keyBoard, { once: true })
   );
   letters.forEach((el) => el.classList.remove("used-letter"));
-
   numOfguesses.innerHTML = "10 guesses remaining";
   displayHint.innerHTML = null;
   dashes = [];
