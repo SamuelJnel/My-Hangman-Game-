@@ -54,6 +54,7 @@ const wordCategory = {
     { word: "mozambique", hint: "Capital city is Maputo." },
     { word: "argentina", hint: "Capital city is Buenos Aires." },
   ],
+
   desserts: [
     { word: "tiramisu", hint: "Coffee-flavoured Italian dessert." },
     { word: "croquembouche", hint: "French pastry puffs piled onto a cone." },
@@ -67,7 +68,21 @@ const wordCategory = {
       word: "alfajores",
       hint: "Cookies sandwiched together with chocolate and dulce de leche.",
     },
+    { word: "snickerdoodle", hint: "Butter cookie rooled in cinnamon sugar." },
+    {
+      word: "cannoli",
+      hint: "fried tube-shaped shells filled with a sweet ricotta",
+    },
+    {
+      word: "lamington",
+      hint: "chocolate coated sponge cake topped with coconut flakes.",
+    },
+    {
+      word: "trifle",
+      hint: "British dessert of layered cake with jam and custard.",
+    },
   ],
+
   animals: [
     {
       word: "kangaroo",
@@ -81,13 +96,17 @@ const wordCategory = {
     },
     { word: "squirrel", hint: "Nimble, bushy-tailed rodent." },
     { word: "yak", hint: "Large cattle native to the Himalayas." },
+    { word: "rabbit", hint: "These mammals are popular during Easter." },
+    { word: "doe", hint: "A deer, a female deer." },
+    { word: "iguana", hint: "herbivorous lizards native to tropical regions." },
+    { word: "cat", hint: "A gift to humanity." },
   ],
 };
 
 function selectCountriesCategory(evt) {
   currentCateroy = evt.target.id;
   dashes = [];
-  console.log(currentCateroy);
+
   if (true) {
     indexNumber = Math.floor(Math.random() * wordCategory.countries.length);
     currentWord = wordCategory.countries[indexNumber].word.toUpperCase();
@@ -98,7 +117,7 @@ function selectCountriesCategory(evt) {
 function selectDessertsCategory(evt) {
   currentCateroy = evt.target.id;
   dashes = [];
-  console.log(currentCateroy);
+
   if (true) {
     indexNumber = Math.floor(Math.random() * wordCategory.desserts.length);
     currentWord = wordCategory.desserts[indexNumber].word.toUpperCase();
@@ -108,6 +127,7 @@ function selectDessertsCategory(evt) {
 function selectAnimalsCategory(evt) {
   currentCateroy = evt.target.id;
   dashes = [];
+
   if (true) {
     indexNumber = Math.floor(Math.random() * wordCategory.animals.length);
     currentWord = wordCategory.animals[indexNumber].word.toUpperCase();
@@ -118,10 +138,12 @@ function selectAnimalsCategory(evt) {
 function keyBoard(evt) {
   letterClicked = evt.target.id;
   usedLetter = evt.target;
+
   if (currentCateroy) {
     usedLetter.classList.add("used-letter");
     evaluateLetters();
     drawCanvas();
+
     if (correctLetter.length === dashes.length) {
       numOfguesses.innerHTML = "You Won!";
     }
@@ -153,16 +175,17 @@ function displayHintBtn() {
   if (currentCateroy === "countries-btn") {
     displayHint.innerHTML = wordCategory.countries[indexNumber].hint;
   }
+
   if (currentCateroy === "desserts-btn") {
     displayHint.innerHTML = wordCategory.desserts[indexNumber].hint;
   }
+
   if (currentCateroy === "animals-btn") {
     displayHint.innerHTML = wordCategory.animals[indexNumber].hint;
   }
-  console.log("clicked hint");
 }
 
-function canvasOnLoad() {
+function dispalyCanvasOnLoad() {
   ctx.lineWidth = 5;
   ctx.beginPath();
   ctx.strokeStyle = "#716F81";
@@ -199,7 +222,7 @@ function canvasOnLoad() {
   ctx.stroke();
 }
 
-canvasOnLoad();
+dispalyCanvasOnLoad();
 
 function drawCanvas() {
   if (incorrectLetter.length === 1) {
@@ -295,7 +318,6 @@ function resetGame() {
   incorrectLetter = [];
   guessContainer.innerHTML = " ";
   ctx.clearRect(0, 0, 400, 400);
-  canvasOnLoad();
+  dispalyCanvasOnLoad();
   resetCategories();
-  console.log(currentCateroy);
 }
