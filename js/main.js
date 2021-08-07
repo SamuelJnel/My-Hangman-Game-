@@ -1,4 +1,3 @@
-let numOfGuesses = 10;
 let letterClicked;
 let correctLetter = [];
 let incorrectLetter = [];
