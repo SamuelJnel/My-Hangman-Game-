@@ -6,14 +6,14 @@ let dashes = [];
 let currentWord = [];
 let usedLetter;
 let indexNumber;
-let currentCateroy = false;
+let currentCategory = false;
 
 let letters = document.querySelectorAll(".letter");
 letters.forEach((el) => el.addEventListener("click", keyBoard, { once: true }));
 
 let guessContainer = document.querySelector(".empty-guess");
 
-let numOfguesses = document.querySelector(".guesses");
+let numOfGuesses = document.querySelector(".guesses");
 
 let displayHint = document.querySelector(".hint-display");
 
@@ -104,7 +104,7 @@ const wordCategory = {
 };
 
 function selectCountriesCategory(evt) {
-  currentCateroy = evt.target.id;
+  currentCategory = evt.target.id;
   dashes = [];
 
   if (true) {
@@ -119,7 +119,7 @@ function selectCountriesCategory(evt) {
 }
 
 function selectDessertsCategory(evt) {
-  currentCateroy = evt.target.id;
+  currentCategory = evt.target.id;
   dashes = [];
 
   if (true) {
@@ -133,7 +133,7 @@ function selectDessertsCategory(evt) {
   }
 }
 function selectAnimalsCategory(evt) {
-  currentCateroy = evt.target.id;
+  currentCategory = evt.target.id;
   dashes = [];
 
   if (true) {
@@ -151,13 +151,13 @@ function keyBoard(evt) {
   letterClicked = evt.target.id;
   usedLetter = evt.target;
 
-  if (currentCateroy) {
+  if (currentCategory) {
     usedLetter.classList.add("used-letter");
     evaluateLetters();
     drawCanvas();
 
     if (correctLetter.length === dashes.length) {
-      numOfguesses.innerHTML = "You Won!";
+      numOfGuesses.innerHTML = "You Won!";
     }
   }
   guessContainer.innerHTML = dashes.join(" ");
@@ -184,20 +184,20 @@ function evaluateLetters() {
 }
 
 function displayHintBtn() {
-  if (currentCateroy === "countries-btn") {
+  if (currentCategory === "countries-btn") {
     displayHint.innerHTML = wordCategory.countries[indexNumber].hint;
   }
 
-  if (currentCateroy === "desserts-btn") {
+  if (currentCategory === "desserts-btn") {
     displayHint.innerHTML = wordCategory.desserts[indexNumber].hint;
   }
 
-  if (currentCateroy === "animals-btn") {
+  if (currentCategory === "animals-btn") {
     displayHint.innerHTML = wordCategory.animals[indexNumber].hint;
   }
 }
 
-function dispalyCanvasOnLoad() {
+function displayCanvasOnLoad() {
   ctx.lineWidth = 5;
   ctx.beginPath();
   ctx.strokeStyle = "#716F81";
@@ -234,11 +234,11 @@ function dispalyCanvasOnLoad() {
   ctx.stroke();
 }
 
-dispalyCanvasOnLoad();
+displayCanvasOnLoad();
 
 function drawCanvas() {
   if (incorrectLetter.length === 1) {
-    numOfguesses.innerHTML = `9 guesses remaining.`;
+    numOfGuesses.innerHTML = `9 guesses remaining.`;
     ctx.lineWidth = 5;
     ctx.beginPath();
     ctx.strokeStyle = "#CE1212";
@@ -246,44 +246,44 @@ function drawCanvas() {
     ctx.lineTo(5, 145);
     ctx.stroke();
   } else if (incorrectLetter.length === 2) {
-    numOfguesses.innerHTML = `8 guesses remaining.`;
+    numOfGuesses.innerHTML = `8 guesses remaining.`;
     ctx.moveTo(40, 145);
     ctx.lineTo(40, 10);
     ctx.stroke();
   } else if (incorrectLetter.length === 3) {
-    numOfguesses.innerHTML = `7 guesses remaining.`;
+    numOfGuesses.innerHTML = `7 guesses remaining.`;
     ctx.lineTo(100, 10);
     ctx.stroke();
   } else if (incorrectLetter.length === 4) {
-    numOfguesses.innerHTML = `6 guesses remaining.`;
+    numOfGuesses.innerHTML = `6 guesses remaining.`;
     ctx.lineTo(100, 25);
     ctx.moveTo(100, 25);
     ctx.stroke();
     ctx.closePath();
   } else if (incorrectLetter.length === 5) {
-    numOfguesses.innerHTML = `5 guesses remaining.`;
+    numOfGuesses.innerHTML = `5 guesses remaining.`;
 
     ctx.lineWidth = 3;
     ctx.beginPath();
     ctx.arc(99, 40, 15, 0, Math.PI * 2);
     ctx.stroke();
   } else if (incorrectLetter.length === 6) {
-    numOfguesses.innerHTML = `4 guesses remaining.`;
+    numOfGuesses.innerHTML = `4 guesses remaining.`;
     ctx.moveTo(100, 55);
     ctx.lineTo(100, 105);
     ctx.stroke();
   } else if (incorrectLetter.length === 7) {
-    numOfguesses.innerHTML = `3 guesses remaining.`;
+    numOfGuesses.innerHTML = `3 guesses remaining.`;
     ctx.moveTo(100, 60);
     ctx.lineTo(80, 80);
     ctx.stroke();
   } else if (incorrectLetter.length === 8) {
-    numOfguesses.innerHTML = `2 guesses remaining.`;
+    numOfGuesses.innerHTML = `2 guesses remaining.`;
     ctx.moveTo(100, 60);
     ctx.lineTo(120, 80);
     ctx.stroke();
   } else if (incorrectLetter.length === 9) {
-    numOfguesses.innerHTML = `1 guess remaining.`;
+    numOfGuesses.innerHTML = `1 guess remaining.`;
     ctx.moveTo(100, 105);
     ctx.lineTo(80, 130);
     ctx.stroke();
@@ -295,22 +295,22 @@ function drawCanvas() {
     ctx.lineTo(120, 130);
     ctx.stroke();
     ctx.fill();
-    numOfguesses.innerHTML = `GAME OVER.`;
+    numOfGuesses.innerHTML = `GAME OVER.`;
     dashes = [];
     dashes.push(currentWord);
   }
 }
 
 function resetCategories() {
-  if (currentCateroy === "countries-btn") {
+  if (currentCategory === "countries-btn") {
     indexNumber = Math.floor(Math.random() * wordCategory.countries.length);
     currentWord = wordCategory.countries[indexNumber].word.toUpperCase();
     showSpaces();
-  } else if (currentCateroy === "desserts-btn") {
+  } else if (currentCategory === "desserts-btn") {
     indexNumber = Math.floor(Math.random() * wordCategory.desserts.length);
     currentWord = wordCategory.desserts[indexNumber].word.toUpperCase();
     showSpaces();
-  } else if (currentCateroy === "animals-btn") {
+  } else if (currentCategory === "animals-btn") {
     indexNumber = Math.floor(Math.random() * wordCategory.animals.length);
     currentWord = wordCategory.animals[indexNumber].word.toUpperCase();
     showSpaces();
@@ -322,13 +322,13 @@ function resetGame() {
     el.addEventListener("click", keyBoard, { once: true })
   );
   letters.forEach((el) => el.classList.remove("used-letter"));
-  numOfguesses.innerHTML = "10 guesses remaining";
+  numOfGuesses.innerHTML = "10 guesses remaining";
   displayHint.innerHTML = null;
   dashes = [];
   correctLetter = [];
   incorrectLetter = [];
   guessContainer.innerHTML = " ";
   ctx.clearRect(0, 0, 400, 400);
-  dispalyCanvasOnLoad();
+  displayCanvasOnLoad();
   resetCategories();
 }
